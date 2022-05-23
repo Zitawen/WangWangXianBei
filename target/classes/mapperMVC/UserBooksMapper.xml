@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.UserBooksMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.UserBooks">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <id column="bookId" jdbcType="INTEGER" property="bookid" />
+    <result column="Time" jdbcType="VARCHAR" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, bookId, `Time`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="springMVC.po.UserBooksKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_books
+    where userId = #{userid,jdbcType=INTEGER}
+      and bookId = #{bookid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="springMVC.po.UserBooksKey">
+    delete from user_books
+    where userId = #{userid,jdbcType=INTEGER}
+      and bookId = #{bookid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="userId" keyProperty="userid" parameterType="springMVC.po.UserBooks" useGeneratedKeys="true">
+    insert into user_books (bookId, `Time`)
+    values (#{bookid,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="userId" keyProperty="userid" parameterType="springMVC.po.UserBooks" useGeneratedKeys="true">
+    insert into user_books
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        bookId,
+      </if>
+      <if test="time != null">
+        `Time`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        #{bookid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.UserBooks">
+    update user_books
+    <set>
+      <if test="time != null">
+        `Time` = #{time,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+      and bookId = #{bookid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.UserBooks">
+    update user_books
+    set `Time` = #{time,jdbcType=VARCHAR}
+    where userId = #{userid,jdbcType=INTEGER}
+      and bookId = #{bookid,jdbcType=INTEGER}
+  </update>
+</mapper>

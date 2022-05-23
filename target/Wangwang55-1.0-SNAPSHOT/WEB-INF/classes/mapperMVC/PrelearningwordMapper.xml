@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.PrelearningwordMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.Prelearningword">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="englishWord" jdbcType="VARCHAR" property="englishword" />
+    <result column="nextDays" jdbcType="INTEGER" property="nextdays" />
+    <result column="addDays" jdbcType="INTEGER" property="adddays" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, englishWord, nextDays, addDays
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prelearningword
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from prelearningword
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="springMVC.po.Prelearningword" useGeneratedKeys="true">
+    insert into prelearningword (userId, englishWord, nextDays, 
+      addDays)
+    values (#{userid,jdbcType=INTEGER}, #{englishword,jdbcType=VARCHAR}, #{nextdays,jdbcType=INTEGER}, 
+      #{adddays,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="springMVC.po.Prelearningword" useGeneratedKeys="true">
+    insert into prelearningword
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="englishword != null">
+        englishWord,
+      </if>
+      <if test="nextdays != null">
+        nextDays,
+      </if>
+      <if test="adddays != null">
+        addDays,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="englishword != null">
+        #{englishword,jdbcType=VARCHAR},
+      </if>
+      <if test="nextdays != null">
+        #{nextdays,jdbcType=INTEGER},
+      </if>
+      <if test="adddays != null">
+        #{adddays,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.Prelearningword">
+    update prelearningword
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="englishword != null">
+        englishWord = #{englishword,jdbcType=VARCHAR},
+      </if>
+      <if test="nextdays != null">
+        nextDays = #{nextdays,jdbcType=INTEGER},
+      </if>
+      <if test="adddays != null">
+        addDays = #{adddays,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.Prelearningword">
+    update prelearningword
+    set userId = #{userid,jdbcType=INTEGER},
+      englishWord = #{englishword,jdbcType=VARCHAR},
+      nextDays = #{nextdays,jdbcType=INTEGER},
+      addDays = #{adddays,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

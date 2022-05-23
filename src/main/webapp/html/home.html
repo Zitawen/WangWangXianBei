@@ -1,0 +1,465 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wang Wang</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="icon" type="image/png" href="https://assets0.baydn.com/static/img/shanbay_favicon.png">
+    <script async="" src="https://assets.baydn.com/baydn/public/sa-sdk-javascript/1.14.13/sensorsdata.min.js" charset="UTF-8"></script>
+    <script async="" src="https://assets0.baydn.com/baydn/public/vendor/ga.js"></script>
+    <script>
+        window.configData = {
+            "appName": "web",
+            "cdnOrigin": "https://assets.baydn.com",
+            "baydnPrefix": "https://assets.baydn.com/baydn/public",
+            "browserApm": {
+                "url": "https://apm.shanbay.com",
+                "version": "7.4.2"
+            },
+            "wechat": {
+                "shareHosts": ["17bdc.com"],
+                "codename": "shanbay17"
+            },
+            "port": 3000,
+            "origin": "https://web.shanbay.com",
+            "oldOrigin": "https://www.shanbay.com",
+            "domain": ".shanbay.com",
+            "loginUrl": "https://web.shanbay.com/web/account/login",
+            "apiv3Prefix": "https://apiv3.shanbay.com",
+            "apiv2Prefix": "https://www.shanbay.com/api/v2",
+            "apiv1Prefix": "https://www.shanbay.com/api/v1",
+            "log": {
+                "level": "ERROR"
+            },
+            "ossSecure": true,
+            "ossAvatarImgCode": "avatar_img",
+            "appletsMap": {
+                "roots": {
+                    "title": "智慧词根",
+                    "productId": "bqnris",
+                    "appletId": "bbohes"
+                },
+                "collins": {
+                    "title": "柯林斯词典",
+                    "productId": "hgfxn",
+                    "appletId": "juuxc"
+                },
+                "affixes": {
+                    "title": "派生联想",
+                    "productId": "topmz",
+                    "appletId": "burubg"
+                },
+                "oxford": {
+                    "title": "牛津英汉词典",
+                    "productId": "rthvg",
+                    "appletId": "brfpi"
+                }
+            },
+            "sensors": {
+                "server_url": "https://sa.shanbay.com/sa?project=production&token=e8d971a5389d7939"
+            }
+        }
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://assets0.baydn.com/baydn/public/vendor/ga.js', 'ga');
+
+        ga('create', 'UA-24491297-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <style>
+        body {
+            padding-bottom: constant(safe-area-inset-bottom);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/bay-components/0.3.1/dist/bay-components.min.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/iconbay/0.1.28/dist/iconbay.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/xbay/1.11.5/dist/mobile-ui.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/xbay/1.11.5/dist/client-ui.css">
+    <link rel="stylesheet" href="https://static.baydn.com/static/font/shanbay-fontawesome/shanbay-fontawesome-v3.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/web_static/web/official-site-login-css-0737c21f9fbd7880b08f.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/web_static/web/lib-ant-design-mobile-7b1f7e2fd4d6062c51af.css">
+    <style type="text/css">
+        .searchContainer * {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .searchContainer {
+            position: relative;
+            height: 30px;
+            border-radius: 15px;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            width: 117px;
+            transition: 0.3s width;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .searchContainer .input {
+            outline: none;
+            border: none;
+            transition: 0.3s width;
+            border-radius: 15px;
+            width: 82px;
+            background-color: transparent;
+            padding-left: 16px;
+            padding-right: 5px;
+            height: 80%;
+            color: #fff;
+        }
+
+        .searchContainer .input::placeholder {
+            color: #fff;
+        }
+
+        .searchContainer .input:focus {
+            width: 132px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .searchContainer .input:focus::placeholder {
+            color: #e0e0e0;
+        }
+
+        .searchContainer .input:focus+.clear {
+            display: inline-block;
+        }
+
+        .searchContainer .submit {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 20px;
+        }
+
+        .searchContainer .submit .icon {
+            width: 16px;
+            height: 16px;
+            background-size: cover;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABBdJREFUaAXVmVmoTVEYx+8xc2WIzOMDD/KgTCkiSaYQ8nBLGRJFGcv0gpQXQ96VJCWJjEWeDJE8SIbIAw+GyFA3l0zX73+cezv2Oetba++z93F99W/vvb7v+//Xt9c+a+29Tq4moTU2NvYhdR6YAPqB/oVjO46vwMvC8T7HM7lc7gnHf2t0uhasBzfATxDHHhG8B6jQ6hqircAK8ApUap8h2A06V6UKhMaA+yBtew3h4kyLQGARaEi75xG+XVznUi8E0u3gV0Qsq8sTEHdIrQjIdmTVU4P3LL7YI1GSAMls7sQ50Crgjnwh5gq4BJ4DTZ/fgKbVAWAqmAt6gBDbxXS7MySwbAydHw4+AZ+9J0DTaaeyREWNxLQGC8FT4DM9svOL0uOdknzLp4D/KOgej7mmhpy2YCvwrR8fiOkWl18C84BlujtbYhNHEuCYDeotIXx7I2n2JQlaqB54SDfYLOFedCaD74aeFru+wYwE1xlkch0LJgsMhHONR/NQIFX++dQU5rI3OGqDyWIEwnvVJUq7VuqSWbKEnqCOQEPmsrUlSSk1IDjWJVpoH+eVInCOQfIWn16PMzP4Lxv6e3zCWqymG0EXWVi0MGVpZwxyq2/5NBUw2CA4b/jSclkaVt/y+irAmq70NZWpMcL6cnvvEOnJ49XG4cs3+wp4bSWn6HPpqH+9LR0F9HIENHB3Pjt8aTe/Mwhd/cunqIBPjmRNr5nOQEW6XYvOo6cN0YbiaxXgGj4tItp5qIbp9dtlrt9HPt4qQAHDXKxptTPKXeByPSY/8X20tFSAZgGXzXI5UmyfAZf6Uc4e8jtUEU5T4nWn98/XlOFOxaUvNpfddjma2xlCzbXWR8ac5uCUT9AdCL4Cly0JkiRbO20u056Qa4iD+F1B8B52idKu7Rz9PvxG4EaDSK7NfpZ4EXBOAT9E7rDjwYwQdAZ683SZhKYFE3oC4RoELD31Y6KH5m83CeuUZdhHfFP+zop/BcdQ8NjQketCbGaS2oMXyjbsG76VsckLCeROAr47L/mRiTRInAmsGUnksmtgbKgIsZptjoHQrcqDodwlcYhsAyGmztwEm8AI0LzJxXk7MAQsB+eBNVXiLmsVFXGyLKW/Ub8TPSKhd9rHeKDkDoc0wNoJ6M61BEtchDa7DraECuhDsiI0WiSvAta2S9IaNVnsA6tByMRRURH9ETkSKESY1/R6Mr7pceZ8Kci2iMJojELoFEj6t9NVcrW5W7LjRtsyEFLE/qbCEx8R0o98AdDc/gy4CnqH7zRYC4b7BImpXhHRziDeHYwEo4HedRL950XevysiWlTS6xhF1CXVyDyvUIRvQbyXeUcqEaAIvYpYRdRXwl+VXE8Rd6rSiUpFjCK0o/F/GEXoE/Q2qAd3QX7L5zdYxvxz4d7HVgAAAABJRU5ErkJggg==");
+        }
+
+        .searchContainer .clear {
+            display: none;
+            cursor: pointer;
+            margin-right: 6px;
+            width: 13px;
+            height: 13px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAABMdJREFUWAm1l1tslEUUx/22lq2VemlTpDa9hAeMiW9iDA+l1YJgAxoMBAg8YEyMUaMi8FASY1KDmtSkDyagVH1AFJIShQW5WCGK0URBUTBeIjG9bdtNsxTtxa69rL+z3flydtpv9+uyTDKdM/85l/935sx01rmJ1t/fv2BsbGxFXl7e9xUVFX8KdqNaV1fXsqmpqdKqqqqQ4zjjEsfp7Oy8Mx6P/4q8kB5jYT0Kx2Qx162jo+MtfG4Xv8QJEedxkQP0++lCQFoQQm2wfWR6mru/ENiNtwSBpNcGYkn8BIkfGCPJBRmEyJHu7u5ahV2XCIFXcLDLcnKKbEwJFiAlg/n5+Y8iXzNKkLiFfTve09Oz1GDZjhDYgW2Ttif4haKioi0GS6SjvLz8IkW5CnDILEBk/sTExElqRrYrqwaB5zBstowvBQKBlcXFxX8b3DGCjNRCDcFP0QsNDuurGD3EqblkMD8jBJ7CthVfOsZvwWCwtqysbED7SGTCAJWVlV8jS8WOGQwnxZOTk+29vb33GizTCIHNENinCTC/gl29TUB8aZaub4qygcCfAswzIE56yUgtGRFnno3tW8fiIQjkKaVO6q6Gbe9WmCumZMKgBDpBjWwk8ITBcHo3xM6QkSqD2SME1qD3sSaAjzD9YS8C4mPWTBjn1MgmHB6gu2Rx+BcZWQbRsNGTUe4WTlQIMajwCBmohcAfCpshus5nrABQIwcJKgUWN+sQWiQZiUQidxmM7asDP8LcJYBNFLLLMxEQH2kzYYLwlc/wlXvNPGHoOL+wZXXIiyH1OSTmq/VrZEC24KLCPEVfJMSa/X6JQC3aE197GawS7HaFD0FuBdv1ncLSir5JiBeINBL0dS+PkBqlr0oedS+1GXjamrC1ueLfYJ9fs/HkXO6Wx+ZKQGznREIM+NL99BGRdQO7DIFvNOZXnhMJuSMo0LNsya12ALAHKODDjO4FZ+t4zX3XBMewHALnCLLIy1kS/4Rt20Bm3Isug76/7ZA7Qe4GTYAgcepD7pADVpAnKOD96PrOckZF3hQlvD+/INA9OhjBn6UGPqBvRW7Ta8ib2Jr3IeIr02lJDA4O3sGboh1n9+kgBN1G8HcEQ55Elv+acmW7DZutENnjAmkET6YDAwNFIyMj7dg+qO0J1siev6kxkQkaJOhRxpXWWkt1dfXLFpYynTUTnILC0dHRz9C0CTTNRkA8Qi5GjaxF/FLmqm2jRjwvONGbQYIvKRgfHw8x1ihHEqQZAq9qzJa5qv8tKChYje63eg1fjTx05LE7a0vZDpTnwVoeMw1aG6dvQ+AFjaWTo9HobcPDw3Kallh6O9ka+e2R0txMYHAzBA6xahNopfBeTLHKMCkpKfmHrZHa+NlSbSYjz1vY9L9yCAQg8BGLG7UCGfgweQQTvw/0mh+5r6+vNBaLfYWu+z7FJ+HiT5OR94yPRCa4DfcB2ATaIPAkRlkRkADJR209Pq6YgBBg6rzLSdpgMIfJEq7j8waQEaUQBNYxJn6w6rVs5HA4XEGxn8O22tjjO0qMUsZ4AAIpXwp4msX1uSIgQeWRiz/JiPsuJSNu3AB78yOL8jvxd8ZWOeuM/xnGuRo5XfJArsO3XIA/IW9Bdt+uuYqTtZ//AY80/83jsN7gAAAAAElFTkSuQmCC");
+        }
+
+        .searchContainer.focused {
+            width: 186px;
+            background-color: #fff;
+            border: 1px solid transparent;
+        }
+
+        .searchContainer.focused .submit {
+            border-left: 1px solid #e0e0e0;
+        }
+
+        .searchContainer.focused .submit .icon {
+            background-image: url("data:image/png;base64,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");
+        }
+
+        .resultModal {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            top: 50px;
+            display: inline-flex;
+            width: 350px;
+            min-height: 60px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .resultModal::before,
+        .resultModal::after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            width: 0;
+            height: 0;
+        }
+
+        .resultModal::before {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #ccc;
+            top: -11px;
+        }
+
+        .resultModal::after {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #fff;
+            top: -10px;
+        }
+
+        .resultModal .resultContent {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .resultModal .resultContent .resultContent-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .resultModal .resultContent .resultContent-head .head-word {
+            font-size: 29px;
+            color: #333;
+            word-break: break-all;
+            line-height: 25px;
+        }
+
+        .resultModal .resultContent .resultContent-head .head-toDetail {
+            cursor: pointer;
+            font-size: 14px;
+            color: #28bea0;
+            white-space: nowrap;
+        }
+
+        .resultModal .resultContent .resultContent-head .head-toDetail:hover {
+            text-decoration: underline;
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation {
+            margin: 10px 0;
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation .pronunciationItem {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-title {
+            font-size: 15px;
+            color: #28bea0;
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-icon {
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            margin: 0 5px;
+            background-size: cover;
+            background-image: url("data:image/png;base64,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");
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-icon.playing {
+            background-image: url("data:image/gif;base64,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");
+        }
+
+        .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-content {
+            font-size: 15px;
+            color: #999;
+        }
+
+        .resultModal .resultContent .resultContent-senses {
+            margin: 5px 0;
+        }
+
+        .resultModal .resultContent .resultContent-senses .sensesItem {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .resultModal .resultContent .resultContent-collectControl {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .resultModal .resultContent .resultContent-collectControl .collectControl-info {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .resultModal .resultContent .resultContent-collectControl .collectControl-successIcon {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin-right: 5px;
+            background-size: cover;
+            background-image: url("data:image/png;base64,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");
+        }
+
+        .resultModal .resultContent .resultContent-collectControl .collectControl-desc {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 2px;
+        }
+
+        .resultModal .resultContent .resultContent-collectControl .collectControl-btnItem {
+            cursor: pointer;
+            border-radius: 30px;
+            display: inline-block;
+            padding: 5px 13px;
+            color: #fff;
+            background-color: #28bea0;
+        }
+    </style>
+</head>
+<body>
+<style>
+    .unread-message {
+        position: relative;
+        padding-right: 20px;
+    }
+
+    .unread-message i {
+        font-size: 22px;
+    }
+
+    .unread-message-num {
+        position: absolute;
+        top: 17px;
+        left: 25px;
+        padding: 0 3px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        white-space: nowrap;
+        opacity: 0.9;
+        transform: translateY(-50%);
+        min-width: 20px;
+        height: 18px;
+        border-radius: 10px;
+        line-height: 18px;
+        background-color: #ff4d4f;
+    }
+</style>
+<div class="sb-nav">
+    <div class="nav-top">
+        <div class="container clearfix">
+            <div class="nav-top-left">
+                <ul>
+                    <li class="nav-brand"></li>
+                    <li><a class="secondary" href="#">首页</a></li>
+                    <li><a class="secondary" href="startlearning.html">单词</a></li>
+                    <li><a class="secondary" href="word.html" target="_blank">生词</a></li>
+                    <li><a class="secondary" href="recharge.html">旺词</a></li>
+                </ul>
+            </div>
+            <div class="nav-top-right">
+                <ul>
+                    <li class="nav-help-btn"><a href="#"></a></li>
+                    <li class="unread-message"><a href="message.html">
+                        <i class="ib ib-envelope-o" id="icon-envelop"></i><span class="unread-message-num">2</span></a></li>
+                </ul>
+                <div class="nav-user">
+                    <div class="nav-top-avatar nav-has-dropdown">
+                        <a class="username" href="javascript:;">
+                        <img id="imgNav" class="avator" src="https://media-image1.baydn.com/avatar_img/yafawk/338d3f1e37b7fed2f6e9d76d837b75c5.ac523447cebb4a1e88672507c82209bf.jpg?x-oss-process=image/resize,w_128,h_128">
+                        <span id="nickname">WangWang</span>
+                        </a>
+                        <ul>
+                            <li><a href="myspace.html">我的空间</a></li>
+                            <li><a href="clockIn.html">我的打卡</a></li>
+                            <li><a href="account.html">账号设置</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="message.html">短信</a></li>
+                            <li><a href="recharge.html">旺词</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="login.html">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="app">
+    <div>
+        <div class="container main-body">
+            <div class="row tasks-container">
+                <div class="span4">
+                    <div class="task" id="task-1">
+                        <div class="task-top">
+                            <div class="task-name">
+                                <p class="task-name-cn">单词</p>
+                            </div>
+                        </div>
+                        <div class="task-start task-start-new"><span><a href="startlearning.html">去学习</a></span></div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="task" id="task-2">
+                        <div class="task-top">
+                            <div class="task-name">
+                                <p class="task-name-cn">生词</p>
+                            </div>
+                        </div>
+                        <div class="task-start task-start-new"><span><a href="word.html">去查看</a></span></div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="task" id="task-3">
+                        <div class="task-top">
+                            <div class="task-name">
+                                <p class="task-name-cn">旺词</p>
+                            </div>
+                        </div>
+                        <div class="task-start task-start-new"><span><a href="recharge.html">去充值</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row daily-quote-container">
+                <div class="span12">
+                    <div class="quote" id="quote">
+                        <div class="block-quote">
+                            <p>Life was a box of chocolates,you never know what you're gonna get.<br>生活就像一盒巧克力，你永远不知道下一块会是什么味道。</p><small>Forrest Gump《阿甘正传》</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer__copyright">
+                <p class="footer__copyright-left"><a href="#" target="_blank"></a><span></span><a
+                        href="#" target="_blank"></a><span><a href="#"></a><a
+                        href="#"></a></span></p>
+                <p></p>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="/resources/js/user/jquery-1.10.2.min.js"></script>
+<script src="/resources/js/user/jq-paginator.js"></script>
+<script src="/resources/js/user/showitems.js"></script>
+<script src="/resources/js/user/uploadImg.js"></script>
+<script src="/resources/js/user/nickname.js"></script>
+</body>
+</html>

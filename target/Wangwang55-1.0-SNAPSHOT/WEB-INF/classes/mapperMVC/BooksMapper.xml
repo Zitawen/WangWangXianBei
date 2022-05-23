@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.BooksMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.Books">
+    <id column="bookId" jdbcType="INTEGER" property="bookid" />
+    <result column="bookname" jdbcType="VARCHAR" property="bookname" />
+    <result column="authorname" jdbcType="VARCHAR" property="authorname" />
+    <result column="publisher" jdbcType="VARCHAR" property="publisher" />
+    <result column="word_num" jdbcType="INTEGER" property="wordNum" />
+    <result column="bookinf" jdbcType="VARCHAR" property="bookinf" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="book_Img" jdbcType="VARCHAR" property="bookImg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bookId, bookname, authorname, publisher, word_num, bookinf, createtime, book_Img
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from books
+    where bookId = #{bookid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from books
+    where bookId = #{bookid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="bookId" keyProperty="bookid" parameterType="springMVC.po.Books" useGeneratedKeys="true">
+    insert into books (bookname, authorname, publisher, 
+      word_num, bookinf, createtime, 
+      book_Img)
+    values (#{bookname,jdbcType=VARCHAR}, #{authorname,jdbcType=VARCHAR}, #{publisher,jdbcType=VARCHAR}, 
+      #{wordNum,jdbcType=INTEGER}, #{bookinf,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{bookImg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="bookId" keyProperty="bookid" parameterType="springMVC.po.Books" useGeneratedKeys="true">
+    insert into books
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookname != null">
+        bookname,
+      </if>
+      <if test="authorname != null">
+        authorname,
+      </if>
+      <if test="publisher != null">
+        publisher,
+      </if>
+      <if test="wordNum != null">
+        word_num,
+      </if>
+      <if test="bookinf != null">
+        bookinf,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="bookImg != null">
+        book_Img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookname != null">
+        #{bookname,jdbcType=VARCHAR},
+      </if>
+      <if test="authorname != null">
+        #{authorname,jdbcType=VARCHAR},
+      </if>
+      <if test="publisher != null">
+        #{publisher,jdbcType=VARCHAR},
+      </if>
+      <if test="wordNum != null">
+        #{wordNum,jdbcType=INTEGER},
+      </if>
+      <if test="bookinf != null">
+        #{bookinf,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bookImg != null">
+        #{bookImg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.Books">
+    update books
+    <set>
+      <if test="bookname != null">
+        bookname = #{bookname,jdbcType=VARCHAR},
+      </if>
+      <if test="authorname != null">
+        authorname = #{authorname,jdbcType=VARCHAR},
+      </if>
+      <if test="publisher != null">
+        publisher = #{publisher,jdbcType=VARCHAR},
+      </if>
+      <if test="wordNum != null">
+        word_num = #{wordNum,jdbcType=INTEGER},
+      </if>
+      <if test="bookinf != null">
+        bookinf = #{bookinf,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bookImg != null">
+        book_Img = #{bookImg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bookId = #{bookid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.Books">
+    update books
+    set bookname = #{bookname,jdbcType=VARCHAR},
+      authorname = #{authorname,jdbcType=VARCHAR},
+      publisher = #{publisher,jdbcType=VARCHAR},
+      word_num = #{wordNum,jdbcType=INTEGER},
+      bookinf = #{bookinf,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      book_Img = #{bookImg,jdbcType=VARCHAR}
+    where bookId = #{bookid,jdbcType=INTEGER}
+  </update>
+</mapper>

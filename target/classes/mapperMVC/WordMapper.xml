@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.WordMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.Word">
+    <id column="englishWord" jdbcType="VARCHAR" property="englishword" />
+    <result column="pa" jdbcType="VARCHAR" property="pa" />
+    <result column="chineseWord" jdbcType="VARCHAR" property="chineseword" />
+    <result column="englishInstance1" jdbcType="VARCHAR" property="englishinstance1" />
+    <result column="chineseInstance1" jdbcType="VARCHAR" property="chineseinstance1" />
+    <result column="englishInstance2" jdbcType="VARCHAR" property="englishinstance2" />
+    <result column="chineseInstance2" jdbcType="VARCHAR" property="chineseinstance2" />
+    <result column="audio" jdbcType="VARCHAR" property="audio" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    englishWord, pa, chineseWord, englishInstance1, chineseInstance1, englishInstance2, 
+    chineseInstance2, audio
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from word
+    where englishWord = #{englishword,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from word
+    where englishWord = #{englishword,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="englishWord" keyProperty="englishword" parameterType="springMVC.po.Word" useGeneratedKeys="true">
+    insert into word (pa, chineseWord, englishInstance1, 
+      chineseInstance1, englishInstance2, chineseInstance2, 
+      audio)
+    values (#{pa,jdbcType=VARCHAR}, #{chineseword,jdbcType=VARCHAR}, #{englishinstance1,jdbcType=VARCHAR}, 
+      #{chineseinstance1,jdbcType=VARCHAR}, #{englishinstance2,jdbcType=VARCHAR}, #{chineseinstance2,jdbcType=VARCHAR}, 
+      #{audio,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="englishWord" keyProperty="englishword" parameterType="springMVC.po.Word" useGeneratedKeys="true">
+    insert into word
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pa != null">
+        pa,
+      </if>
+      <if test="chineseword != null">
+        chineseWord,
+      </if>
+      <if test="englishinstance1 != null">
+        englishInstance1,
+      </if>
+      <if test="chineseinstance1 != null">
+        chineseInstance1,
+      </if>
+      <if test="englishinstance2 != null">
+        englishInstance2,
+      </if>
+      <if test="chineseinstance2 != null">
+        chineseInstance2,
+      </if>
+      <if test="audio != null">
+        audio,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pa != null">
+        #{pa,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseword != null">
+        #{chineseword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance1 != null">
+        #{englishinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance1 != null">
+        #{chineseinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance2 != null">
+        #{englishinstance2,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance2 != null">
+        #{chineseinstance2,jdbcType=VARCHAR},
+      </if>
+      <if test="audio != null">
+        #{audio,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.Word">
+    update word
+    <set>
+      <if test="pa != null">
+        pa = #{pa,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseword != null">
+        chineseWord = #{chineseword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance1 != null">
+        englishInstance1 = #{englishinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance1 != null">
+        chineseInstance1 = #{chineseinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance2 != null">
+        englishInstance2 = #{englishinstance2,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance2 != null">
+        chineseInstance2 = #{chineseinstance2,jdbcType=VARCHAR},
+      </if>
+      <if test="audio != null">
+        audio = #{audio,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where englishWord = #{englishword,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.Word">
+    update word
+    set pa = #{pa,jdbcType=VARCHAR},
+      chineseWord = #{chineseword,jdbcType=VARCHAR},
+      englishInstance1 = #{englishinstance1,jdbcType=VARCHAR},
+      chineseInstance1 = #{chineseinstance1,jdbcType=VARCHAR},
+      englishInstance2 = #{englishinstance2,jdbcType=VARCHAR},
+      chineseInstance2 = #{chineseinstance2,jdbcType=VARCHAR},
+      audio = #{audio,jdbcType=VARCHAR}
+    where englishWord = #{englishword,jdbcType=VARCHAR}
+  </update>
+</mapper>

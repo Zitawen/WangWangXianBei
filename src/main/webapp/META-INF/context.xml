@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<!--	&lt;!&ndash;tomcat jdbc pool&ndash;&gt;-->
+<!--	<Resource name="jdbc/sms" auth="Container"-->
+<!--		type="javax.sql.DataSource" initialSize="20" maxTotal="100" maxIdle="30"-->
+<!--		maxWaitMillis="10000" -->
+<!--		removeAbandonedOnBorrow="true"-->
+<!--		removeAbandonedOnMaintenance="true"-->
+<!--		removeAbandonedTimeout="60"-->
+<!--		logAbandoned="true"-->
+<!--		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"-->
+<!--		username="root" password="123456"-->
+<!--		driverClassName="com.mysql.cj.jdbc.Driver"-->
+<!--		url="jdbc:mysql:///wangwang?serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useServerPrepStmts=true&amp;cachePrepStmts=true"-->
+<!--	/>-->
+<!--	&lt;!&ndash;c3p0&ndash;&gt;-->
+<!--	<Resource name="jdbc/c3p0" auth="Container"-->
+<!--			  initialPoolSize="20"-->
+<!--			  maxPoolSize="100"-->
+<!--			  minPoolSize="20"-->
+<!--			  acquireIncrement="2"-->
+<!--			  factory="org.apache.naming.factory.BeanFactory"-->
+<!--			  type="com.mchange.v2.c3p0.ComboPooledDataSource"-->
+<!--			  user="root" password="123456"-->
+<!--			  driverClass="com.mysql.cj.jdbc.Driver"-->
+<!--			  forceUseNamedDriverClass="true"-->
+<!--			  jdbcUrl="jdbc:mysql:///wangwang?serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useServerPrepStmts=true&amp;cachePrepStmts=true"-->
+<!--	/>-->
+</Context>

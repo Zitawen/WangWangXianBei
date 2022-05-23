@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--格式文档-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--加载连接数据库的基本信息文件 -->
+    <properties resource="jdbc.properties"></properties>
+    <!-- 配置全局属性 -->
+    <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true" />
+        <!-- 使用列标签(数据库中的字段名)替换列别名（写sql查询语句查询字段时给字段定义的名称） 默认:true -->
+        <setting name="useColumnLabel" value="true" />
+        <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <!--配置日志-->
+        <setting name="logImpl" value="LOG4J"/>
+        <!-- 启用延迟加载特性，不配置默认关闭该特性-->
+        <setting name="lazyLoadingEnabled" value="true"></setting>
+        <!-- 按需加载: false:使用关联属性，及时加载;    true,加载对象，则加载所有属性， -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--解决受影响行数-->
+        <!--SIMPLE 就是普通的执行器；REUSE 执行器会重用预处理语句（prepared statements）； BATCH 执行器将重用语句并执行批量更新-->
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+<!--        <setting name="defaultExecutorType" value="BATCH"/>-->
+    </settings>
+
+</configuration>

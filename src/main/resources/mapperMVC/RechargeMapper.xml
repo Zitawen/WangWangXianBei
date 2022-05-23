@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.RechargeMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.Recharge">
+    <id column="rechargeId" jdbcType="INTEGER" property="rechargeid" />
+    <result column="vocBefore" jdbcType="INTEGER" property="vocbefore" />
+    <result column="vocAfter" jdbcType="INTEGER" property="vocafter" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="reTime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rechargeId, vocBefore, vocAfter, price, reTime, userId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from recharge
+    where rechargeId = #{rechargeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from recharge
+    where rechargeId = #{rechargeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="rechargeId" keyProperty="rechargeid" parameterType="springMVC.po.Recharge" useGeneratedKeys="true">
+    insert into recharge (vocBefore, vocAfter, price, 
+      reTime, userId)
+    values (#{vocbefore,jdbcType=INTEGER}, #{vocafter,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, 
+      #{retime,jdbcType=TIMESTAMP}, #{userid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="rechargeId" keyProperty="rechargeid" parameterType="springMVC.po.Recharge" useGeneratedKeys="true">
+    insert into recharge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vocbefore != null">
+        vocBefore,
+      </if>
+      <if test="vocafter != null">
+        vocAfter,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="retime != null">
+        reTime,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vocbefore != null">
+        #{vocbefore,jdbcType=INTEGER},
+      </if>
+      <if test="vocafter != null">
+        #{vocafter,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="retime != null">
+        #{retime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.Recharge">
+    update recharge
+    <set>
+      <if test="vocbefore != null">
+        vocBefore = #{vocbefore,jdbcType=INTEGER},
+      </if>
+      <if test="vocafter != null">
+        vocAfter = #{vocafter,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="retime != null">
+        reTime = #{retime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rechargeId = #{rechargeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.Recharge">
+    update recharge
+    set vocBefore = #{vocbefore,jdbcType=INTEGER},
+      vocAfter = #{vocafter,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER},
+      reTime = #{retime,jdbcType=TIMESTAMP},
+      userId = #{userid,jdbcType=INTEGER}
+    where rechargeId = #{rechargeid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Html/login.html" value="file://$PROJECT_DIR$/src/main/webapp/Html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Html/recite.html" value="file://$PROJECT_DIR$/src/main/webapp/Html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Html/recite2.html" value="file://$PROJECT_DIR$/src/main/webapp/Html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/help.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/home.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/payment.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/recite.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/register.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/startlearning.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/html/word.html" value="file://$PROJECT_DIR$/src/main/webapp/html" />
+      </map>
+    </option>
+  </component>
+</project>

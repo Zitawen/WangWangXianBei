@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.User">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="uname" jdbcType="VARCHAR" property="uname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="vocabulary" jdbcType="INTEGER" property="vocabulary" />
+    <result column="maxnum" jdbcType="INTEGER" property="maxnum" />
+    <result column="mstate" jdbcType="VARCHAR" property="mstate" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="wordNum" jdbcType="INTEGER" property="wordnum" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, uname, `password`, tel, vocabulary, maxnum, mstate, `level`, image, wordNum, 
+    email
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="userId" keyProperty="userid" parameterType="springMVC.po.User" useGeneratedKeys="true">
+    insert into user (uname, `password`, tel, 
+      vocabulary, maxnum, mstate, 
+      `level`, image, wordNum, 
+      email)
+    values (#{uname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{vocabulary,jdbcType=INTEGER}, #{maxnum,jdbcType=INTEGER}, #{mstate,jdbcType=VARCHAR}, 
+      #{level,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{wordnum,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="userId" keyProperty="userid" parameterType="springMVC.po.User" useGeneratedKeys="true">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uname != null">
+        uname,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="vocabulary != null">
+        vocabulary,
+      </if>
+      <if test="maxnum != null">
+        maxnum,
+      </if>
+      <if test="mstate != null">
+        mstate,
+      </if>
+      <if test="level != null">
+        `level`,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="wordnum != null">
+        wordNum,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uname != null">
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="vocabulary != null">
+        #{vocabulary,jdbcType=INTEGER},
+      </if>
+      <if test="maxnum != null">
+        #{maxnum,jdbcType=INTEGER},
+      </if>
+      <if test="mstate != null">
+        #{mstate,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="wordnum != null">
+        #{wordnum,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="springMVC.po.User">
+    update user
+    <set>
+      <if test="uname != null">
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="vocabulary != null">
+        vocabulary = #{vocabulary,jdbcType=INTEGER},
+      </if>
+      <if test="maxnum != null">
+        maxnum = #{maxnum,jdbcType=INTEGER},
+      </if>
+      <if test="mstate != null">
+        mstate = #{mstate,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        `level` = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="wordnum != null">
+        wordNum = #{wordnum,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="springMVC.po.User">
+    update user
+    set uname = #{uname,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      vocabulary = #{vocabulary,jdbcType=INTEGER},
+      maxnum = #{maxnum,jdbcType=INTEGER},
+      mstate = #{mstate,jdbcType=VARCHAR},
+      `level` = #{level,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      wordNum = #{wordnum,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>

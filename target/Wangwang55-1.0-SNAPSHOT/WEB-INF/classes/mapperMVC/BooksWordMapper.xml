@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.BooksWordMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.BooksWordKey">
+    <id column="bookId" jdbcType="INTEGER" property="bookid" />
+    <id column="englishWord" jdbcType="VARCHAR" property="englishword" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="springMVC.po.BooksWordKey">
+    delete from books_word
+    where bookId = #{bookid,jdbcType=INTEGER}
+      and englishWord = #{englishword,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="bookId" keyProperty="bookid" parameterType="springMVC.po.BooksWordKey" useGeneratedKeys="true">
+    insert into books_word (englishWord)
+    values (#{englishword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="bookId" keyProperty="bookid" parameterType="springMVC.po.BooksWordKey" useGeneratedKeys="true">
+    insert into books_word
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="englishword != null">
+        englishWord,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="englishword != null">
+        #{englishword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

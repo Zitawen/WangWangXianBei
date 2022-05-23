@@ -1,0 +1,388 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="https://static.baydn.com/static/img/shanbay_favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="https://assets.baydn.com/web_static/words_wordsweb/manifest.json">
+    <title>Wang Wang</title>
+    <link href="https://assets.baydn.com/web_static/words_wordsweb/static/css/main.fa0dfedd.chunk.css" rel="stylesheet">
+    <style type="text/css">.searchContainer
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        color: #333333;
+        box-sizing: border-box;
+    }
+
+    .searchContainer {
+        position: relative;
+        height: 30px;
+        border-radius: 15px;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        width: 170px;
+        transition: 0.3s width;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .searchContainer .input {
+        outline: none;
+        border: none;
+        transition: 0.3s width;
+        border-radius: 15px;
+        width: 82px;
+        background-color: transparent;
+        padding-left: 20px;
+        padding-right: 0px;
+        height: 80%;
+        color: #fff;
+    }
+
+    .searchContainer .input::placeholder {
+        color: #fff;
+    }
+
+    .searchContainer .input:focus {
+        width: 130px;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .searchContainer .input:focus::placeholder {
+        color: #e0e0e0;
+    }
+
+    .searchContainer .input:focus + .clear {
+        display: inline-block;
+    }
+
+    .searchContainer .submit {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 20px;
+    }
+
+    .searchContainer .submit .icon {
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABBdJREFUaAXVmVmoTVEYx+8xc2WIzOMDD/KgTCkiSaYQ8nBLGRJFGcv0gpQXQ96VJCWJjEWeDJE8SIbIAw+GyFA3l0zX73+cezv2Oetba++z93F99W/vvb7v+//Xt9c+a+29Tq4moTU2NvYhdR6YAPqB/oVjO46vwMvC8T7HM7lc7gnHf2t0uhasBzfATxDHHhG8B6jQ6hqircAK8ApUap8h2A06V6UKhMaA+yBtew3h4kyLQGARaEi75xG+XVznUi8E0u3gV0Qsq8sTEHdIrQjIdmTVU4P3LL7YI1GSAMls7sQ50Crgjnwh5gq4BJ4DTZ/fgKbVAWAqmAt6gBDbxXS7MySwbAydHw4+AZ+9J0DTaaeyREWNxLQGC8FT4DM9svOL0uOdknzLp4D/KOgej7mmhpy2YCvwrR8fiOkWl18C84BlujtbYhNHEuCYDeotIXx7I2n2JQlaqB54SDfYLOFedCaD74aeFru+wYwE1xlkch0LJgsMhHONR/NQIFX++dQU5rI3OGqDyWIEwnvVJUq7VuqSWbKEnqCOQEPmsrUlSSk1IDjWJVpoH+eVInCOQfIWn16PMzP4Lxv6e3zCWqymG0EXWVi0MGVpZwxyq2/5NBUw2CA4b/jSclkaVt/y+irAmq70NZWpMcL6cnvvEOnJ49XG4cs3+wp4bSWn6HPpqH+9LR0F9HIENHB3Pjt8aTe/Mwhd/cunqIBPjmRNr5nOQEW6XYvOo6cN0YbiaxXgGj4tItp5qIbp9dtlrt9HPt4qQAHDXKxptTPKXeByPSY/8X20tFSAZgGXzXI5UmyfAZf6Uc4e8jtUEU5T4nWn98/XlOFOxaUvNpfddjma2xlCzbXWR8ac5uCUT9AdCL4Cly0JkiRbO20u056Qa4iD+F1B8B52idKu7Rz9PvxG4EaDSK7NfpZ4EXBOAT9E7rDjwYwQdAZ683SZhKYFE3oC4RoELD31Y6KH5m83CeuUZdhHfFP+zop/BcdQ8NjQketCbGaS2oMXyjbsG76VsckLCeROAr47L/mRiTRInAmsGUnksmtgbKgIsZptjoHQrcqDodwlcYhsAyGmztwEm8AI0LzJxXk7MAQsB+eBNVXiLmsVFXGyLKW/Ub8TPSKhd9rHeKDkDoc0wNoJ6M61BEtchDa7DraECuhDsiI0WiSvAta2S9IaNVnsA6tByMRRURH9ETkSKESY1/R6Mr7pceZ8Kci2iMJojELoFEj6t9NVcrW5W7LjRtsyEFLE/qbCEx8R0o98AdDc/gy4CnqH7zRYC4b7BImpXhHRziDeHYwEo4HedRL950XevysiWlTS6xhF1CXVyDyvUIRvQbyXeUcqEaAIvYpYRdRXwl+VXE8Rd6rSiUpFjCK0o/F/GEXoE/Q2qAd3QX7L5zdYxvxz4d7HVgAAAABJRU5ErkJggg==");
+        position: absolute;
+        left: 140px;
+    }
+
+    .searchContainer .clear {
+        display: none;
+        cursor: pointer;
+        margin-right: 6px;
+        width: 13px;
+        height: 13px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAABMdJREFUWAm1l1tslEUUx/22lq2VemlTpDa9hAeMiW9iDA+l1YJgAxoMBAg8YEyMUaMi8FASY1KDmtSkDyagVH1AFJIShQW5WCGK0URBUTBeIjG9bdtNsxTtxa69rL+z3flydtpv9+uyTDKdM/85l/935sx01rmJ1t/fv2BsbGxFXl7e9xUVFX8KdqNaV1fXsqmpqdKqqqqQ4zjjEsfp7Oy8Mx6P/4q8kB5jYT0Kx2Qx162jo+MtfG4Xv8QJEedxkQP0++lCQFoQQm2wfWR6mru/ENiNtwSBpNcGYkn8BIkfGCPJBRmEyJHu7u5ahV2XCIFXcLDLcnKKbEwJFiAlg/n5+Y8iXzNKkLiFfTve09Oz1GDZjhDYgW2Ttif4haKioi0GS6SjvLz8IkW5CnDILEBk/sTExElqRrYrqwaB5zBstowvBQKBlcXFxX8b3DGCjNRCDcFP0QsNDuurGD3EqblkMD8jBJ7CthVfOsZvwWCwtqysbED7SGTCAJWVlV8jS8WOGQwnxZOTk+29vb33GizTCIHNENinCTC/gl29TUB8aZaub4qygcCfAswzIE56yUgtGRFnno3tW8fiIQjkKaVO6q6Gbe9WmCumZMKgBDpBjWwk8ITBcHo3xM6QkSqD2SME1qD3sSaAjzD9YS8C4mPWTBjn1MgmHB6gu2Rx+BcZWQbRsNGTUe4WTlQIMajwCBmohcAfCpshus5nrABQIwcJKgUWN+sQWiQZiUQidxmM7asDP8LcJYBNFLLLMxEQH2kzYYLwlc/wlXvNPGHoOL+wZXXIiyH1OSTmq/VrZEC24KLCPEVfJMSa/X6JQC3aE197GawS7HaFD0FuBdv1ncLSir5JiBeINBL0dS+PkBqlr0oedS+1GXjamrC1ueLfYJ9fs/HkXO6Wx+ZKQGznREIM+NL99BGRdQO7DIFvNOZXnhMJuSMo0LNsya12ALAHKODDjO4FZ+t4zX3XBMewHALnCLLIy1kS/4Rt20Bm3Isug76/7ZA7Qe4GTYAgcepD7pADVpAnKOD96PrOckZF3hQlvD+/INA9OhjBn6UGPqBvRW7Ta8ib2Jr3IeIr02lJDA4O3sGboh1n9+kgBN1G8HcEQ55Elv+acmW7DZutENnjAmkET6YDAwNFIyMj7dg+qO0J1siev6kxkQkaJOhRxpXWWkt1dfXLFpYynTUTnILC0dHRz9C0CTTNRkA8Qi5GjaxF/FLmqm2jRjwvONGbQYIvKRgfHw8x1ihHEqQZAq9qzJa5qv8tKChYje63eg1fjTx05LE7a0vZDpTnwVoeMw1aG6dvQ+AFjaWTo9HobcPDw3Kallh6O9ka+e2R0txMYHAzBA6xahNopfBeTLHKMCkpKfmHrZHa+NlSbSYjz1vY9L9yCAQg8BGLG7UCGfgweQQTvw/0mh+5r6+vNBaLfYWu+z7FJ+HiT5OR94yPRCa4DfcB2ATaIPAkRlkRkADJR209Pq6YgBBg6rzLSdpgMIfJEq7j8waQEaUQBNYxJn6w6rVs5HA4XEGxn8O22tjjO0qMUsZ4AAIpXwp4msX1uSIgQeWRiz/JiPsuJSNu3AB78yOL8jvxd8ZWOeuM/xnGuRo5XfJArsO3XIA/IW9Bdt+uuYqTtZ//AY80/83jsN7gAAAAAElFTkSuQmCC");
+    }
+
+    .searchContainer.focused {
+        width: 186px;
+        background-color: #fff;
+        border: 1px solid transparent;
+    }
+
+    .searchContainer.focused .submit {
+        border-left: 1px solid #e0e0e0;
+    }
+
+    .searchContainer.focused .submit .icon {
+        background-image: url("data:image/png;base64,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");
+    }
+
+    .resultModal {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        top: 50px;
+        display: inline-flex;
+        width: 350px;
+        min-height: 60px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid #ccc;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .resultModal::before,
+    .resultModal::after {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        width: 0;
+        height: 0;
+    }
+
+    .resultModal::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #ccc;
+        top: -11px;
+    }
+
+    .resultModal::after {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+        top: -10px;
+    }
+
+    .resultModal .resultContent {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .resultModal .resultContent .resultContent-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .resultModal .resultContent .resultContent-head .head-word {
+        font-size: 29px;
+        color: #333;
+        word-break: break-all;
+        line-height: 25px;
+    }
+
+    .resultModal .resultContent .resultContent-head .head-toDetail {
+        cursor: pointer;
+        font-size: 14px;
+        color: #28bea0;
+        white-space: nowrap;
+    }
+
+    .resultModal .resultContent .resultContent-head .head-toDetail:hover {
+        text-decoration: underline;
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation {
+        margin: 10px 0;
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation .pronunciationItem {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-title {
+        font-size: 15px;
+        color: #28bea0;
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-icon {
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+        margin: 0 5px;
+        background-size: cover;
+        background-image: url("data:image/png;base64,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");
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-icon.playing {
+        background-image: url("data:image/gif;base64,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");
+    }
+
+    .resultModal .resultContent .resultContent-pronunciation .pronunciationItem .pronunciationItem-content {
+        font-size: 15px;
+        color: #999;
+    }
+
+    .resultModal .resultContent .resultContent-senses {
+        margin: 5px 0;
+    }
+
+    .resultModal .resultContent .resultContent-senses .sensesItem {
+        font-size: 15px;
+        color: #333;
+    }
+
+    .resultModal .resultContent .resultContent-collectControl {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .resultModal .resultContent .resultContent-collectControl .collectControl-info {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .resultModal .resultContent .resultContent-collectControl .collectControl-successIcon {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 5px;
+        background-size: cover;
+        background-image: url("data:image/png;base64,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");
+    }
+
+    .resultModal .resultContent .resultContent-collectControl .collectControl-desc {
+        font-size: 13px;
+        color: #aaa;
+        margin-top: 2px;
+    }
+
+    .resultModal .resultContent .resultContent-collectControl .collectControl-btnItem {
+        cursor: pointer;
+        border-radius: 30px;
+        display: inline-block;
+        padding: 5px 13px;
+        color: #fff;
+        background-color: #28bea0;
+    }
+    </style>
+
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+    <div class="Layout_page__2Wedt" style="overflow: hidden;height: 150vh; ">
+        <nav  class="Nav_nav__3kyeO">
+            <div class="Nav_container__sBZA1">
+                <img width="50" src="/resources/images/狗子.png" alt="wangwang">
+                <div class="Nav_itemsWrapper__3FUxo">
+                    <a class="Nav_item__TffFb" href="../html/home.html" target="_self">首页</a>
+                    <a class="Nav_item__TffFb" href="../html/startlearning.html" target="_self">单词</a>
+                    <a class="Nav_item__TffFb" href="../html/word.html" target="_self">生词</a>
+                    <a class="Nav_item__TffFb" href="../html/recharge.html" target="_self">旺词</a>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                </div>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <div class="Nav_rightWrapper__1myNk">
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <div class="Nav_searchWrap__26y2s">
+                        <div class="Nav_searchInner__1rR2I" id="search" style="position: relative;right: 120px;">
+                            <div class="searchContainer"><input id="wenCheck" class="input" placeholder="查词">
+                                <div class="submit" ><i id="ww" class="icon"></i></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="Nav_hotkey__35TKx">快捷键</div>-->
+                    <div class="Nav_loginPannel__3Wx4g">
+                        <div class="index_loginWrap__9lXnS">
+                            <div  class="index_shortInfo__2I1h4 index_expt__3-6Gj">
+<!--                                <img class="index_arrowDown__3GfG8 index_expt__3-6Gj index_trans__3gnl1" alt="" src="https://assets.baydn.com/web_static/words_wordsweb/static/media/arrow-down.fe8d853a.svg">-->
+                                <div id="nickname" class="index_nickName__H__xF index_expt__3-6Gj">WangWang</div>
+                                <img id="imgNav" class="index_avat__3hXIp index_expt__3-6Gj" alt=""
+                                      src="/resources/images/user.webp">
+                            </div>
+                            <div id="haha" class="index_toggleBox__2ectb index_expt__3-6Gj" style="display:none">
+                                <div class="index_cate__3a5tU index_expt__3-6Gj" >
+                                    <a href="../html/myspace.html">
+                                        <div class="index_cateItem__11-SR index_expt__3-6Gj">我的空间
+                                        </div>
+                                    </a>
+                                    <a href="../html/clockIn.html">
+                                        <div class="index_cateItem__11-SR index_expt__3-6Gj">我的打卡</div></a>
+                                    <a href="../html/account.html">
+                                        <div class="index_cateItem__11-SR index_expt__3-6Gj">账户设置</div></a>
+                                </div>
+                                <div class="index_cate__3a5tU index_expt__3-6Gj">
+                                <a href="../html/message.html">
+                                    <div class="index_cateItem__11-SR index_expt__3-6Gj">短信</div></a>
+                                <a href="../html/recharge.html">
+                                    <div class="index_cateItem__11-SR index_expt__3-6Gj">旺词</div></a>
+                                </div>
+                                <div class="index_cate__3a5tU index_expt__3-6Gj">
+                                    <a href="../html/login.html">
+                                        <div class="index_cateItem__11-SR index_expt__3-6Gj">退出</div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+<!--        <nav class="SubNav_subnav__1HR8R">-->
+<!--            <div class="SubNav_container__1zXeP">-->
+<!--                <div class="SubNav_itemsWrapper__1mM4u">-->
+<!--                    <a class="SubNav_item__167K_ SubNav_active__MC6yN" href="#">单词学习</a>-->
+<!--            </div>-->
+<!--        </nav>-->
+        <nav class="SubNav_subnav__1HR8R">
+            <div class="SubNav_container__1zXeP">
+                <div class="SubNav_itemsWrapper__1mM4u">
+                    <a class="SubNav_item__167K_ SubNav_active__MC6yN" href="#">单词学习</a>
+                    <a class="SubNav_item__167K_" id="book" href="#/books">单词书</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="Layout_main__2_zw8">
+            <div class="study-page">
+                <div class="StudyPage_studyPage__1Ri5C">
+                    <div>
+                        <div>
+                            <div id="wenBei" class="index_wordBox__IJotZ index_center___r_K_">
+                                <div class="index_word__3nhJU"> <span>deteriorate</span>
+                                    <div class="index_simpleOptionBox__1bGP6"><i class="index_simpleOption__2_XNF"
+                                                                                 title="不再安排学习此单词"></i></div>
+                                </div>
+                                <div class="index_content__2QwXl">
+                                    <div class="index_audioWrap__3agUR">UK<span class="index_phonetic__o-RcB">/dɪ'tɪəriəreɪt/</span>
+                                        <span class="index_audio__2-vMp">
+				 <img alt="trumpet"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAilBMVEUAAAApwaApvqBO3MoovqEov6Apv6Epv6Iov6EpvqEpv6Eov6EpwKErwKItxKcwxKkov6Epv6ApwKEpwKEtw6Uov6Epv6Eov6Eov6Epv6Epv6EpwKIpwKEpv6Mpw6MuwqMpvqEqwKIrwqEqwqI1yqopv6Apv6EpvqEpvqIowKEovqEov6Eov6EovqAIbtG3AAAALXRSTlMAPugD/fnCbtiftYyFNRYM9Od+VxvGZs28mHNaUjomIdVMLysI7q+odl7p3KuvvkW8AAABfElEQVRIx+3WyXaCMBiG4d9CQEaZBRQc69D2u//bKzUtLfQQSNx5fDdZPRpDQqRnD9GxXihTJwBz1Kw3x1cqWnN13NJ9aXtY4qdK9msvDG0zObtJAVWcBRjCx72YJjYwiA3YmsCuXiHAW6D4v0KmPW9aFidAhCsGmH2bo02IaQXovd9dYhz7xYWaIiDvYmMCNgG3GbQ5sOvgcAI+MCBrxh0w76z4ywRMsY7A59OcSWNyAasZYsCRx4sQ+qYZGN5lMV+zshlsYC+PfR0p/4xYHlMKXSNaA6UCtoCEyAMcBewCHlECnO/BlvK0K7Vpp2B8wUylR2XwR7VW2iQm3yT1HdtzS9LYAQp+MFxpvPo9kp7sy6BiwJVua72kv+UTsAVE/DXUu0OyCdhLo+9NdqJuH+OYdwVYTb1iy2iyI0uMZwx6TIPtwpHrJiJB/lmAc36ehHfdINZqGiux+1j2flfHtDFa7JF0Wsm4DRbyuP03ZZJSWvSGMCPlFvTsMfoEWPe4qIWR/SoAAAAASUVORK5CYII="
+                      class="index_trump__3bTaM" style="filter: grayscale(100%);"></span></div>
+                                    <div class="index_audioWrap__3agUR">US<span class="index_phonetic__o-RcB">/dɪ'tɪriəreɪt/</span><span
+                                            class="index_audio__2-vMp">
+				 <img alt="trumpet"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAilBMVEUAAAApwaApvqBO3MoovqEov6Apv6Epv6Iov6EpvqEpv6Eov6EpwKErwKItxKcwxKkov6Epv6ApwKEpwKEtw6Uov6Epv6Eov6Eov6Epv6Epv6EpwKIpwKEpv6Mpw6MuwqMpvqEqwKIrwqEqwqI1yqopv6Apv6EpvqEpvqIowKEovqEov6Eov6EovqAIbtG3AAAALXRSTlMAPugD/fnCbtiftYyFNRYM9Od+VxvGZs28mHNaUjomIdVMLysI7q+odl7p3KuvvkW8AAABfElEQVRIx+3WyXaCMBiG4d9CQEaZBRQc69D2u//bKzUtLfQQSNx5fDdZPRpDQqRnD9GxXihTJwBz1Kw3x1cqWnN13NJ9aXtY4qdK9msvDG0zObtJAVWcBRjCx72YJjYwiA3YmsCuXiHAW6D4v0KmPW9aFidAhCsGmH2bo02IaQXovd9dYhz7xYWaIiDvYmMCNgG3GbQ5sOvgcAI+MCBrxh0w76z4ywRMsY7A59OcSWNyAasZYsCRx4sQ+qYZGN5lMV+zshlsYC+PfR0p/4xYHlMKXSNaA6UCtoCEyAMcBewCHlECnO/BlvK0K7Vpp2B8wUylR2XwR7VW2iQm3yT1HdtzS9LYAQp+MFxpvPo9kp7sy6BiwJVua72kv+UTsAVE/DXUu0OyCdhLo+9NdqJuH+OYdwVYTb1iy2iyI0uMZwx6TIPtwpHrJiJB/lmAc36ehHfdINZqGiux+1j2flfHtDFa7JF0Wsm4DRbyuP03ZZJSWvSGMCPlFvTsMfoEWPe4qIWR/SoAAAAASUVORK5CYII="
+                      class="index_trump__3bTaM" style="filter: none;"></span></div>
+                                </div>
+                            </div>
+                            <div id="wenHuan" class="index_btnBox__pXO_l">
+                                <div class="index_option__1CVr2 index_green__2lFgU">
+                                    <div id="1" class="index_title__1zZFT">1</div>
+                                    <div id="changeWord" class="index_content__1XOlo">认识</div>
+                                </div>
+                                <div class="index_option__1CVr2 index_green__2lFgU">
+                                    <div id="2" class="index_title__1zZFT">2</div>
+                                    <div id="changeWord2" class="index_content__1XOlo">模糊</div>
+                                </div>
+                                <div class="index_option__1CVr2 index_red__VSPTN">
+                                    <div id="3" class="index_title__1zZFT">3</div>
+                                    <div id="changeWord3" class="index_content__1XOlo">不认识</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/resources/js/user/jquery-1.10.2.min.js"></script>
+<script src="/resources/js/user/jq-paginator.js"></script>
+<!--<script src="/JS/user/jquery.js"></script>-->
+<script src="/unused/recite.js"></script>
+<script src="/resources/js/words/inquery.js"></script>
+<script src="/resources/js/words/add.js"></script>
+<script src="/resources/js/words/remove.js"></script>
+<script src="/resources/js/user/uploadImg.js"></script>
+<script src="/resources/js/user/showitems.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springMVC.mapper.WinfoMapper">
+  <resultMap id="BaseResultMap" type="springMVC.po.Winfo">
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="englishWord" jdbcType="VARCHAR" property="englishword" />
+    <result column="nextDays" jdbcType="INTEGER" property="nextdays" />
+    <result column="addDays" jdbcType="INTEGER" property="adddays" />
+    <result column="pa" jdbcType="VARCHAR" property="pa" />
+    <result column="chineseWord" jdbcType="VARCHAR" property="chineseword" />
+    <result column="englishInstance1" jdbcType="VARCHAR" property="englishinstance1" />
+    <result column="chineseInstance1" jdbcType="VARCHAR" property="chineseinstance1" />
+    <result column="englishInstance2" jdbcType="VARCHAR" property="englishinstance2" />
+    <result column="chineseInstance2" jdbcType="VARCHAR" property="chineseinstance2" />
+  </resultMap>
+  <insert id="insert" parameterType="springMVC.po.Winfo">
+    insert into winfo (userId, englishWord, nextDays, 
+      addDays, pa, chineseWord, 
+      englishInstance1, chineseInstance1, englishInstance2, 
+      chineseInstance2)
+    values (#{userid,jdbcType=INTEGER}, #{englishword,jdbcType=VARCHAR}, #{nextdays,jdbcType=INTEGER}, 
+      #{adddays,jdbcType=INTEGER}, #{pa,jdbcType=VARCHAR}, #{chineseword,jdbcType=VARCHAR}, 
+      #{englishinstance1,jdbcType=VARCHAR}, #{chineseinstance1,jdbcType=VARCHAR}, #{englishinstance2,jdbcType=VARCHAR}, 
+      #{chineseinstance2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="springMVC.po.Winfo">
+    insert into winfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="englishword != null">
+        englishWord,
+      </if>
+      <if test="nextdays != null">
+        nextDays,
+      </if>
+      <if test="adddays != null">
+        addDays,
+      </if>
+      <if test="pa != null">
+        pa,
+      </if>
+      <if test="chineseword != null">
+        chineseWord,
+      </if>
+      <if test="englishinstance1 != null">
+        englishInstance1,
+      </if>
+      <if test="chineseinstance1 != null">
+        chineseInstance1,
+      </if>
+      <if test="englishinstance2 != null">
+        englishInstance2,
+      </if>
+      <if test="chineseinstance2 != null">
+        chineseInstance2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="englishword != null">
+        #{englishword,jdbcType=VARCHAR},
+      </if>
+      <if test="nextdays != null">
+        #{nextdays,jdbcType=INTEGER},
+      </if>
+      <if test="adddays != null">
+        #{adddays,jdbcType=INTEGER},
+      </if>
+      <if test="pa != null">
+        #{pa,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseword != null">
+        #{chineseword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance1 != null">
+        #{englishinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance1 != null">
+        #{chineseinstance1,jdbcType=VARCHAR},
+      </if>
+      <if test="englishinstance2 != null">
+        #{englishinstance2,jdbcType=VARCHAR},
+      </if>
+      <if test="chineseinstance2 != null">
+        #{chineseinstance2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

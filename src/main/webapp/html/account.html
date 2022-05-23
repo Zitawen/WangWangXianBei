@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wang Wang</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="icon" type="image/png" href="https://assets0.baydn.com/static/img/shanbay_favicon.png">
+    <script async="" src="https://assets.baydn.com/baydn/public/sa-sdk-javascript/1.14.13/sensorsdata.min.js" charset="UTF-8"></script>
+    <script async="" src="https://assets0.baydn.com/baydn/public/vendor/ga.js"></script>
+    <script>
+        window.configData = {
+            "appName": "web",
+            "cdnOrigin": "https://assets.baydn.com",
+            "baydnPrefix": "https://assets.baydn.com/baydn/public",
+            "browserApm": {
+                "url": "https://apm.shanbay.com",
+                "version": "7.4.2"
+            },
+            "wechat": {
+                "shareHosts": ["17bdc.com"],
+                "codename": "shanbay17"
+            },
+            "port": 3000,
+            "origin": "https://web.shanbay.com",
+            "oldOrigin": "https://www.shanbay.com",
+            "domain": ".shanbay.com",
+            "loginUrl": "https://web.shanbay.com/web/account/login",
+            "apiv3Prefix": "https://apiv3.shanbay.com",
+            "apiv2Prefix": "https://www.shanbay.com/api/v2",
+            "apiv1Prefix": "https://www.shanbay.com/api/v1",
+            "log": {
+                "level": "ERROR"
+            },
+            "ossSecure": true,
+            "ossAvatarImgCode": "avatar_img",
+            "appletsMap": {
+                "roots": {
+                    "title": "智慧词根",
+                    "productId": "bqnris",
+                    "appletId": "bbohes"
+                },
+                "collins": {
+                    "title": "柯林斯词典",
+                    "productId": "hgfxn",
+                    "appletId": "juuxc"
+                },
+                "affixes": {
+                    "title": "派生联想",
+                    "productId": "topmz",
+                    "appletId": "burubg"
+                },
+                "oxford": {
+                    "title": "牛津英汉词典",
+                    "productId": "rthvg",
+                    "appletId": "brfpi"
+                }
+            },
+            "sensors": {
+                "server_url": "https://sa.shanbay.com/sa?project=production&token=e8d971a5389d7939"
+            }
+        }
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://assets0.baydn.com/baydn/public/vendor/ga.js', 'ga');
+
+        ga('create', 'UA-24491297-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <style>
+        body {
+            padding-bottom: constant(safe-area-inset-bottom);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/bay-components/0.3.1/dist/bay-components.min.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/iconbay/0.1.28/dist/iconbay.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/xbay/1.11.5/dist/mobile-ui.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/baydn/public/shanbay/xbay/1.11.5/dist/client-ui.css">
+    <link rel="stylesheet" href="https://assets.baydn.com/web_static/web/web-accounts-profiles-526e25e65ff6c65c8cca.css">
+</head>
+<body>
+<div class="sb-nav">
+    <div class="nav-top">
+        <div class="container clearfix">
+            <div class="nav-top-left">
+                <ul>
+                    <li class="nav-brand"><a href="#"></a></li>
+                    <li><a class="secondary" href="home.html">首页</a></li>
+                    <li><a class="secondary" href="startlearning.html">单词</a></li>
+                    <li><a class="secondary" href="word.html">生词</a></li>
+                    <li><a class="secondary" href="recharge.html">旺词</a></li>
+                </ul>
+            </div>
+            <div class="nav-top-right">
+                <ul>
+                </ul>
+                <div class="nav-user">
+                    <div class="nav-top-avatar nav-has-dropdown">
+                        <a class="username" href="javascript:;">
+                            <img id="imgNav" class="avator" src="/resources/images/user.webp">
+                            <span id="nickname">WangWang</span>
+                        </a>
+                        <ul>
+                            <li><a href="myspace.html">我的空间</a></li>
+                            <li><a href="clockIn.html">我的打卡</a></li>
+                            <li><a href="account.html">账号设置</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="message.html">短信</a></li>
+                            <li><a href="recharge.html">旺词</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="login.html">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-sub">
+        <div class="container"></div>
+    </div>
+</div>
+<div class="container main-body">
+    <div class="container-inner">
+
+        <div class="section base-info">
+            <div class="header">
+                <div class="section_title">账号信息</div>
+            </div>
+            <div class="content">
+                <div class="user-data"><span class="label">手机号:</span>
+                    <span  class="value">
+                    <input type="text" id="iPhone" name="iPhone" placeholder="Your Tel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Tel'"
+                           required="" class="single-input" disabled="disabled"></span></div>
+                <div class="user-data"><span class="label">旺旺ID:</span><span class="value">yafawk</span></div>
+                <div class="user-data"><span class="label">昵 称:</span>
+                    <span class="value">
+						<input type="text" id="na" name="na" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'"
+                               required="" class="single-input" disabled="disabled">
+						 </span>
+                </div>
+            </div>
+            <a id="change" style="color: rgb(255, 139, 35); visibility: visible;">
+                <button style="border-radius: 10px; border-color: white; color: black; background-color: #ffffff">修改资料</button>
+            </a>
+            <a id="save" style="visibility: hidden; color: rgb(255, 139, 35);">
+                <button id="saveMessage" style="border-radius: 10px; border-color: white; color: black; background-color: white">保存</button>
+            </a>
+        </div>
+
+        <div class="section social-list">
+            <div class="header">
+                <div class="section_title">账号绑定</div>
+            </div>
+            <div class="content">
+                <div class="social-data">
+                    <div>
+                        <img class="social-data__logo" src="/resources/images/邮箱.webp"><span
+                            class="social-data__nickname">
+                        <input type="text" id="email" name="email" placeholder="Your Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'"
+                                                                 required="" class="single-input" disabled="disabled">
+                    </span></div>
+                    <bottom class="social-data__status" id="change2">绑定</bottom>
+                    <bottom class="social-data__status" style="visibility: hidden;" id="save2">保存</bottom>
+                </div>
+                <div class="ps">* 网页版暂不支持绑定<span class="channel">QQ</span>、<span class="channel">微博</span>及<span class="channel">微信</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/resources/js/user/jquery-1.10.2.min.js"></script>
+<script src="/resources/js/user/jq-paginator.js"></script>
+<script src="/resources/js/assets/bootstrap.min.js"></script>
+<script src="/resources/js/user/uploadImg.js"></script>
+<script src="/resources/js/user/nickname.js"></script>
+<script type="text/javascript">
+    change.onclick=function(){
+        na.removeAttribute("disabled");
+        iPhone.removeAttribute("disabled");
+        change.style.visibility="hidden";
+        save.style.visibility="visible";
+    }
+    save.onclick=function(){
+        $('#na').attr("disabled",true);
+        $('#iPhone').attr("disabled",true);
+        change.style.visibility="visible";
+        save.style.visibility="hidden";
+    }
+</script>
+<script src="https://assets.baydn.com/baydn/public/raven-js/3.26.4/raven.min.js"></script>
+<script>
+    "use strict";
+    Raven.config("https://afeba39860394b3482429e43f96320bd@sentry.17bdc.com/195", {
+        ignoreErrors: [/WeixinJSBridge/, /MyAppGetHTMLElementsAtPoint/, /MyAppGetLinkTitleNameAtPoint/,
+            /com\.shanbay\.community\.activity\.ShanbayWebPageActivity/, /diableNightMode/, /fetchShareChannels/
+        ],
+        includePaths: [/shanbay\.com/, /baydn\.com/],
+        dataCallback: function(e) {
+            return e.request.headers.cookie = document.cookie, e
+        }
+    }).install(), Raven.setUserContext({
+        id: 'yafawk'
+    });
+</script>
+<script>
+    "use strict";
+    ! function(t) {
+        var r, n = t.Base64;
+        if ("undefined" != typeof module && module.exports) try {
+            r = require("buffer").Buffer
+        } catch (e) {}
+        var o, u = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+            c = function(e) {
+                for (var t = {}, r = 0, n = e.length; r < n; r++) t[e.charAt(r)] = r;
+                return t
+            }(u),
+            a = String.fromCharCode,
+            i = function(e) {
+                if (e.length < 2) return (t = e.charCodeAt(0)) < 128 ? e : t < 2048 ? a(192 | t >>> 6) + a(128 | 63 & t) : a(224 |
+                    t >>> 12 & 15) + a(128 | t >>> 6 & 63) + a(128 | 63 & t);
+                var t = 65536 + 1024 * (e.charCodeAt(0) - 55296) + (e.charCodeAt(1) - 56320);
+                return a(240 | t >>> 18 & 7) + a(128 | t >>> 12 & 63) + a(128 | t >>> 6 & 63) + a(128 | 63 & t)
+            },
+            f = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g,
+            d = function(e) {
+                return e.replace(f, i)
+            },
+            s = function(e) {
+                var t = [0, 2, 1][e.length % 3],
+                    r = e.charCodeAt(0) << 16 | (1 < e.length ? e.charCodeAt(1) : 0) << 8 | (2 < e.length ? e.charCodeAt(2) : 0);
+                return [u.charAt(r >>> 18), u.charAt(r >>> 12 & 63), 2 <= t ? "=" : u.charAt(r >>> 6 & 63), 1 <= t ? "=" : u.charAt(
+                    63 & r)].join("")
+            },
+            h = t.btoa ? function(e) {
+                return t.btoa(e)
+            } : function(e) {
+                return e.replace(/[\s\S]{1,3}/g, s)
+            },
+            l = r ? function(e) {
+                return (e.constructor === r.constructor ? e : new r(e)).toString("base64")
+            } : function(e) {
+                return h(d(e))
+            },
+            g = function(e, t) {
+                return t ? l(String(e)).replace(/[+\/]/g, function(e) {
+                    return "+" == e ? "-" : "_"
+                }).replace(/=/g, "") : l(String(e))
+            },
+            p = new RegExp(["[À-ß][-¿]", "[à-ï][-¿]{2}", "[ð-÷][-¿]{3}"].join("|"), "g"),
+            A = function(e) {
+                switch (e.length) {
+                    case 4:
+                        var t = ((7 & e.charCodeAt(0)) << 18 | (63 & e.charCodeAt(1)) << 12 | (63 & e.charCodeAt(2)) << 6 | 63 & e.charCodeAt(
+                            3)) - 65536;
+                        return a(55296 + (t >>> 10)) + a(56320 + (1023 & t));
+                    case 3:
+                        return a((15 & e.charCodeAt(0)) << 12 | (63 & e.charCodeAt(1)) << 6 | 63 & e.charCodeAt(2));
+                    default:
+                        return a((31 & e.charCodeAt(0)) << 6 | 63 & e.charCodeAt(1))
+                }
+            },
+            b = function(e) {
+                return e.replace(p, A)
+            },
+            C = function(e) {
+                var t = e.length,
+                    r = t % 4,
+                    n = (0 < t ? c[e.charAt(0)] << 18 : 0) | (1 < t ? c[e.charAt(1)] << 12 : 0) | (2 < t ? c[e.charAt(2)] << 6 : 0) |
+                        (3 < t ? c[e.charAt(3)] : 0),
+                    o = [a(n >>> 16), a(n >>> 8 & 255), a(255 & n)];
+                return o.length -= [0, 0, 2, 1][r], o.join("")
+            },
+            B = t.atob ? function(e) {
+                return t.atob(e)
+            } : function(e) {
+                return e.replace(/[\s\S]{1,4}/g, C)
+            },
+            y = r ? function(e) {
+                return (e.constructor === r.constructor ? e : new r(e, "base64")).toString()
+            } : function(e) {
+                return b(B(e))
+            },
+            e = function(e) {
+                return y(String(e).replace(/[-_]/g, function(e) {
+                    return "-" == e ? "+" : "/"
+                }).replace(/[^A-Za-z0-9\+\/]/g, ""))
+            };
+        if (t.Base64 = {
+            VERSION: "2.1.9",
+            atob: B,
+            btoa: h,
+            fromBase64: e,
+            toBase64: g,
+            utob: d,
+            encode: g,
+            encodeURI: function(e) {
+                return g(e, !0)
+            },
+            btou: b,
+            decode: e,
+            noConflict: function() {
+                var e = t.Base64;
+                return t.Base64 = n, e
+            }
+        }, window.getMetaData = (o = JSON.parse(e("bnVsbA==")), function(e) {
+            return e ? o[e] : o
+        }), "function" == typeof Object.defineProperty) {
+            var S = function(e) {
+                return {
+                    value: e,
+                    enumerable: !1,
+                    writable: !0,
+                    configurable: !0
+                }
+            };
+            t.Base64.extendString = function() {
+                Object.defineProperty(String.prototype, "fromBase64", S(function() {
+                    return e(this)
+                })), Object.defineProperty(String.prototype, "toBase64", S(function(e) {
+                    return g(this, e)
+                })), Object.defineProperty(String.prototype, "toBase64URI", S(function() {
+                    return g(this, !0)
+                }))
+            }
+        }
+        t.Meteor && (Base64 = t.Base64), "undefined" != typeof module && module.exports && (module.exports.Base64 = t.Base64),
+        "function" == typeof define && define.amd && define([], function() {
+            return t.Base64
+        })
+    }("undefined" != typeof self ? self : "undefined" != typeof window ? window : "undefined" != typeof global ? global :
+        void 0);
+</script>
+<script src="https://assets.baydn.com/baydn/public/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://assets.baydn.com/baydn/public/bay-utils/1.3.1/dist/bay-utils.min.js"></script>
+<script src="https://assets.baydn.com/baydn/public/bay-components/0.3.1/dist/bay-components.min.js"></script>
+<script src="https://assets.baydn.com/baydn/public/jweixin140/1.4.0/jweixin-1.4.0.js"></script>
+<script>
+    "use strict";
+
+    function _objectSpread(t) {
+        for (var e = 1; e < arguments.length; e++) {
+            var a = null != arguments[e] ? arguments[e] : {},
+                n = Object.keys(a);
+            "function" == typeof Object.getOwnPropertySymbols && (n = n.concat(Object.getOwnPropertySymbols(a).filter(function(
+                e) {
+                return Object.getOwnPropertyDescriptor(a, e).enumerable
+            }))), n.forEach(function(e) {
+                _defineProperty(t, e, a[e])
+            })
+        }
+        return t
+    }
+
+    function _defineProperty(e, t, a) {
+        return t in e ? Object.defineProperty(e, t, {
+            value: a,
+            enumerable: !0,
+            configurable: !0,
+            writable: !0
+        }) : e[t] = a, e
+    }
+    var _configData = configData,
+        _configData$wechat = _configData.wechat,
+        wechat = void 0 === _configData$wechat ? {} : _configData$wechat,
+        defaultCodename = wechat.codename,
+        shareHosts = wechat.shareHosts,
+        _wechat$configUrl = wechat.configUrl,
+        configUrl = void 0 === _wechat$configUrl ? "https://apiv3.shanbay.com/bayuser/wechat/jsconfig" : _wechat$configUrl;
+
+    function request(a) {
+        return new Promise(function(e) {
+            var t = new XMLHttpRequest;
+            t.onload = function() {
+                200 === t.status && e(JSON.parse(t.response))
+            }, t.open("GET", a), t.send()
+        })
+    }
+    var defaultJsApiList = ["updateTimelineShareData", "updateAppMessageShareData"],
+        jsApiListMap = {
+            updateTimelineShareData: "wechat",
+            updateAppMessageShareData: "wechat_user"
+        },
+        requiredConfigKeys = ["timestamp", "appid", "signature", "noncestr"],
+        replaceLinkHost = function(e, t) {
+            return e.replace(/:\/\/(.*?)\//, "://".concat(t, "/"))
+        },
+        isWechatUA = function(e) {
+            return /micromessenger/i.test(e)
+        },
+        checkConfigData = function(t) {
+            if (!shareHosts || "[object Array]" !== Object.prototype.toString.call(shareHosts)) throw new Error(
+                "shareHosts is missing or shareHosts type is not array");
+            requiredConfigKeys.forEach(function(e) {
+                if (!t[e]) throw new Error("".concat(e, " is missed in wx config, please check ").concat(configUrl, " response"))
+            })
+        },
+        unique = function(n) {
+            var r = [];
+            return n.forEach(function(e, t) {
+                var a = n[t]; - 1 === r.indexOf(a) && r.push(a)
+            }), r
+        },
+        getShareMeta = function(e) {
+            var t = document.getElementsByTagName("meta");
+            return {
+                title: e.title || t.share_title && t.share_title.content || document.title,
+                desc: e.desc || t.description && t.description.content,
+                shareUrls: e.shareUrls || t.share_urls && t.share_urls.content,
+                shareUrl: e.shareUrl || t.share_url && t.share_url.content || window.location.href,
+                imgUrl: e.imgUrl || t.share_img && t.share_img.content
+            }
+        },
+        getWxShareData = function(e) {
+            var t = e.shareUrls,
+                a = e.shareUrl,
+                n = e.jsApi,
+                r = e.wxShareData,
+                o = t ? JSON.parse(t)[jsApiListMap[n]] : a,
+                i = new URL(o),
+                s = i.host,
+                c = i.pathname,
+                u = o;
+            if ("s.shanbay.com" === s && alert("分享请不要使用短链！"), -1 < ["www.shanbay.com", "web.shanbay.com", "h10.shanbay.com"].indexOf(
+                s)) {
+                var h = "/s/track" === c ? "web" : s.split(".")[0],
+                    f = "".concat(h, ".").concat(shareHosts[Math.floor(Math.random() * shareHosts.length)]);
+                u = replaceLinkHost(o, f)
+            }
+            var l = _objectSpread({}, r, {
+                success: function() {
+                    r.success && r.success(n)
+                },
+                link: u
+            });
+            return Object.keys(l).forEach(function(e) {
+                return void 0 === l[e] && delete l[e]
+            }), l
+        },
+        configWxSdk = function() {
+            var e = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {},
+                t = e.debug,
+                n = void 0 !== t && t,
+                a = e.onShareSuccess,
+                h = void 0 === a ? function() {} : a,
+                r = e.onShareCancel,
+                f = void 0 === r ? function() {} : r,
+                o = e.onConfigReady,
+                l = void 0 === o ? function() {} : o,
+                i = e.onError,
+                p = void 0 === i ? function() {} : i,
+                s = e.jsApiList,
+                d = void 0 === s ? defaultJsApiList : s,
+                c = e.shareData,
+                g = void 0 === c ? {} : c,
+                u = e.codename,
+                w = void 0 === u ? defaultCodename : u;
+            isWechatUA(window.navigator.userAgent) ? request("".concat(configUrl, "?url=").concat(encodeURIComponent(window.location
+                .href)).concat(w ? "&app_name=".concat(w) : "")).then(function(e) {
+                var i = e.appid,
+                    s = e.timestamp,
+                    c = e.noncestr,
+                    u = e.signature;
+                checkConfigData(e);
+                var t = unique(d.concat(defaultJsApiList)),
+                    a = {
+                        debug: n,
+                        appId: i,
+                        timestamp: s,
+                        nonceStr: c,
+                        signature: u,
+                        jsApiList: t
+                    };
+                wx.config(a), wx.ready(function() {
+                    var e = getShareMeta(g),
+                        t = e.title,
+                        a = e.desc,
+                        n = e.shareUrls,
+                        r = e.shareUrl,
+                        o = {
+                            title: t,
+                            desc: a,
+                            imgUrl: e.imgUrl,
+                            success: h,
+                            cancel: f
+                        };
+                    defaultJsApiList.forEach(function(e) {
+                        var t = getWxShareData({
+                            shareUrls: n,
+                            shareUrl: r,
+                            jsApi: e,
+                            wxShareData: o
+                        });
+                        wx[e](t)
+                    }), l && l({
+                        appId: i,
+                        timestamp: s,
+                        nonceStr: c,
+                        signature: u
+                    })
+                }), wx.error(function(e) {
+                    p && p(e)
+                })
+            }) : l && l()
+        };
+    window.configWxSdk = configWxSdk;
+</script>
+<script src="https://assets.baydn.com/baydn/public/shanbay/xbay/1.11.5/dist/mobile-common.min.js"></script>
+<script src="https://assets.baydn.com/baydn/public/art-template/3.0.3/dist/template.js"></script>
+<script src="https://assets.baydn.com/web_static/web/runtime-822da29a05bdc9bfd616.js"></script>
+<script src="https://assets.baydn.com/web_static/web/vendor-1deb0a0b8ae06c09e9db.js"></script>
+<script>
+    (function(para) {
+        var p = para.sdk_url,
+            n = para.name,
+            w = window,
+            d = document,
+            s = 'script',
+            x = null,
+            y = null;
+        if (typeof(w['sensorsDataAnalytic201505']) !== 'undefined') {
+            return false;
+        }
+        w['sensorsDataAnalytic201505'] = n;
+        w[n] = w[n] || function(a) {
+            return function() {
+                (w[n]._q = w[n]._q || []).push([a, arguments]);
+            }
+        };
+        var ifs = ['track', 'quick', 'register', 'registerPage', 'registerOnce', 'trackSignup', 'trackAbtest',
+            'setProfile', 'setOnceProfile', 'appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify',
+            'login', 'logout', 'trackLink', 'clearAllRegister', 'getAppStatus'
+        ];
+        for (var i = 0; i < ifs.length; i++) {
+            w[n][ifs[i]] = w[n].call(null, ifs[i]);
+        }
+        if (!w[n]._t) {
+            x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+            x.async = 1;
+            x.src = p;
+            x.setAttribute('charset', 'UTF-8');
+            w[n].para = para;
+            y.parentNode.insertBefore(x, y);
+        }
+    })({
+        sdk_url: 'https://assets.baydn.com/baydn/public/sa-sdk-javascript/1.14.13/sensorsdata.min.js',
+        heatmap_url: 'https://assets.baydn.com/baydn/public/sa-sdk-javascript/1.14.13/heatmap.min.js',
+        name: 'sensors',
+        server_url: 'https://sa.shanbay.com/sa?project=production&token=e8d971a5389d7939',
+        is_track_device_id: true
+    });
+    (function() {
+        var userId = 'yafawk';
+
+        if (userId) {
+            sensors.login(userId)
+        }
+    })()
+</script>
+<script src="https://assets.baydn.com/web_static/web/web-accounts-profiles-526e25e65ff6c65c8cca.js"></script>
+<div class="bay-share-guide"><img src="https://static.baydn.com/baydn/public/images/objects/share.png"></div>
+</body>
+</html>
